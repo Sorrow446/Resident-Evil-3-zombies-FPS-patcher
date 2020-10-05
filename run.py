@@ -5,7 +5,7 @@ POSITIONS = {
 	15612504, # Oct 1, 0xEE3A50
 	15631032  # Aug 5, 0xEE82B8
 }
-unsup = False
+sup = True
 
 with open(sys.argv[1], 'rb+') as f:
 	for pos in POSITIONS:
@@ -18,8 +18,11 @@ with open(sys.argv[1], 'rb+') as f:
 			f.seek(pos)
 			f.write(b'\x45\x31\xc0')
 			print("OK.")
+			sup = True
+			break
 		else:
-			unsup = True
-if unsup:
+			sup = False
+
+if not sup:
 	print("Unsupported exe.")
 input("Press enter to exit.")
