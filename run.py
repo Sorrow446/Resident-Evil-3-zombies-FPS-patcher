@@ -24,5 +24,5 @@ with open(sys.argv[1], 'rb+') as f:
 			print("OK.")
 			break
 if incom:
-	print("Incompatible exe.")
+	print("Unsupported exe.")
 input("Press enter to exit.")
