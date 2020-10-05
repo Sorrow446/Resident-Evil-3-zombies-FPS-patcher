@@ -19,7 +19,7 @@ with open(sys.argv[1], 'rb+') as f:
 			f.write(b'\x45\x31\xc0')
 			print("OK.")
 		else:
-			unsup = False
+			unsup = True
 if unsup:
 	print("Unsupported exe.")
 input("Press enter to exit.")
