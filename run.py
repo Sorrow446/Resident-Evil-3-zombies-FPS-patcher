@@ -1,14 +1,15 @@
 import sys
 
 
-POSITIONS = {
-	15612504, # Oct 1, 0xEE3A58
-	15631032  # Aug 5, 0xEE82B8
+OFFSETS = {
+	'0xEE3A58', # Oct 1
+	'0xEE82B8'  # Aug 5
 }
 sup = True
 
 with open(sys.argv[1], 'rb+') as f:
-	for pos in POSITIONS:
+	for offset in OFFSETS:
+		pos = int(offset, 16)
 		f.seek(pos)
 		current = f.read(3)
 		if current == b'\x45\x31\xc0':
